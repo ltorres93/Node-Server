@@ -137,8 +137,8 @@ router.get ('/', function(req, res){
 router.get ('/bpass', function(req, res){
   global.surname = req.param ('surname');
   global.codigo = req.param ('codigo');
-  BoardingPass[0].messages[0].attachment.payload.boarding_pass.passenger_name= (`Mr ${surname}`);
-  BoardingPass[0].messages[0].attachment.payload.boarding_pass.pnr_number= (`${codigo}`);
+  BoardingPass[0].messages[0].attachment.payload.boarding_pass[0].passenger_name= (`Mr ${surname}`);
+  BoardingPass[0].messages[0].attachment.payload.boarding_pass[0].pnr_number= (`${codigo}`);
   res.setHeader('Content-type', 'application/json');
   res.json((BoardingPass[0]));
 });
