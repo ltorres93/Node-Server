@@ -46,8 +46,8 @@ checkin[0]= ({
 app.get ('/*', function(req, res){
 	var surname = req.param ('surname');
 	var codigo = req.param ('codigo');
-	checkin[0].messages[0].attachment.payload.intro_message= (`Checkin in available Mr ${surname}`);
-	 //res.setHeader('Content-disposition', 'attachment; filename= Checkin');
+	checkin[0].messages[0].attachment.payload.intro_message= (`Checkin is available Mr ${surname}`);
+	checkin[0].messages[0].attachment.payload.pnr_number= (`${codigo}`);
 	 res.setHeader('Content-type', 'application/json');
 	res.json((checkin[0]));
 });
